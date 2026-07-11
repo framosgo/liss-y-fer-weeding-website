@@ -1,0 +1,27 @@
+{
+  "name": "wedding-website",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/web",
+    "apps/api"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @wedding/web",
+    "dev:api": "npm run start:dev --workspace @wedding/api",
+    "build": "npm run build --workspace @wedding/web && npm run build --workspace @wedding/api",
+    "lint": "npm run lint --workspaces --if-present",
+    "format": "prettier --write .",
+    "prisma:generate": "npm run prisma:generate --workspace @wedding/api",
+    "prisma:migrate": "npm run prisma:migrate --workspace @wedding/api",
+    "seed": "npm run seed --workspace @wedding/api"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "eslint": "^9.31.0",
+    "eslint-config-prettier": "^10.1.5",
+    "prettier": "^3.6.2",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.37.0"
+  }
+}

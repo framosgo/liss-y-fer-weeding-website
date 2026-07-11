@@ -1,0 +1,69 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum RSVPStatus {
+  PENDING
+  CONFIRMED
+  DECLINED
+}
+
+enum MealChoice {
+  SEA_BASS
+  CHICKEN
+  RISOTTO
+  CHILD
+}
+
+enum AnnouncementPriority {
+  LOW
+  NORMAL
+  HIGH
+}
+
+model GuestParty {
+  id             String       @id @default(cuid())
+  invitationCode String       @unique
+  primaryName    String
+  email          String?
+  partySize      Int
+  status         RSVPStatus   @default(PENDING)
+  note           String?
+  songRequest    String?
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  attendees      Attendee[]
+}
+
+model Attendee {
+  id        String      @id @default(cuid())
+  partyId   String
+  name      String
+  attending Boolean?
+  meal      MealChoice?
+  allergies String?
+  party     GuestParty  @relation(fields: [partyId], references: [id], onDelete: Cascade)
+}
+
+model Announcement {
+  id          String               @id @default(cuid())
+  title       String
+  body        String
+  priority    AnnouncementPriority @default(NORMAL)
+  publishedAt DateTime             @default(now())
+  expiresAt   DateTime?
+  isActive    Boolean              @default(true)
+}
+
+model GuestbookEntry {
+  id        String   @id @default(cuid())
+  name      String
+  message   String
+  approved  Boolean  @default(true)
+  createdAt DateTime @default(now())
+}

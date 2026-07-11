@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#fff8f6"/>
+  <path d="M0 0h1200v630H0z" fill="#470d13" opacity=".08"/>
+  <circle cx="1000" cy="120" r="180" fill="#c6908f" opacity=".25"/>
+  <circle cx="150" cy="520" r="210" fill="#828256" opacity=".2"/>
+  <text x="120" y="270" fill="#470d13" font-family="Georgia,serif" font-size="96">Clara &amp; Mateo</text>
+  <text x="124" y="350" fill="#828256" font-family="Arial,sans-serif" font-size="34">Wedding Weekend | Seville | 21 June 2027</text>
+</svg>
