@@ -7,6 +7,6 @@ import { AdminGuard } from './admin.guard';
 @Module({
   controllers: [AuthController],
   providers: [AuthService, AdminGuard],
-  exports: [AdminGuard]
+  exports: [AuthService, AdminGuard]
 })
 export class AuthModule {}

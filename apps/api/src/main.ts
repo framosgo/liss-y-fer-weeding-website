@@ -10,8 +10,8 @@ async function bootstrap() {
   app.setGlobalPrefix('');
 
   const swaggerConfig = new DocumentBuilder()
-    .setTitle('Wedding API')
-    .setDescription('REST API for RSVPs, announcements, guest lookup, guestbook, and admin exports.')
+    .setTitle('API de la boda')
+    .setDescription('API REST para RSVPs, anuncios, búsqueda de invitados, libro de firmas y exportaciones de administración.')
     .setVersion('1.0')
     .addBearerAuth()
     .build();

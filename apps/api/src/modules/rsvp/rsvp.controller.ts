@@ -9,20 +9,13 @@ const rsvpSchema = z.object({
     z.object({
       id: z.string(),
       attending: z.boolean(),
-      meal: z.string(),
       allergies: z.string().optional()
     }),
   ),
   songRequest: z.string().optional(),
+  requiresBus: z.boolean().optional(),
   note: z.string().optional()
 });
-
-const mealMap: Record<string, 'SEA_BASS' | 'CHICKEN' | 'RISOTTO' | 'CHILD'> = {
-  'Sea bass': 'SEA_BASS',
-  'Herb roasted chicken': 'CHICKEN',
-  'Wild mushroom risotto': 'RISOTTO',
-  'Child meal': 'CHILD'
-};
 
 @ApiTags('rsvp')
 @Controller('rsvp')
@@ -35,9 +28,9 @@ export class RsvpController {
     if (!parsed.success) throw new BadRequestException(parsed.error.flatten());
     const party = await this.prisma.guestParty.findUnique({
       where: { invitationCode: parsed.data.invitationCode.toUpperCase() },
-      include: { attendees: true }
+      include: { guests: true }
     });
-    if (!party) throw new BadRequestException('Invitation code not found');
+    if (!party) throw new BadRequestException('Código de invitación no encontrado');
 
     const anyAttending = parsed.data.guests.some((guest) => guest.attending);
     await this.prisma.$transaction([
@@ -46,15 +39,15 @@ export class RsvpController {
         data: {
           status: anyAttending ? 'CONFIRMED' : 'DECLINED',
           note: parsed.data.note,
-          songRequest: parsed.data.songRequest
+          songRequest: parsed.data.songRequest,
+          requiresBus: anyAttending ? (parsed.data.requiresBus ?? false) : false
         }
       }),
       ...parsed.data.guests.map((guest) =>
-        this.prisma.attendee.update({
+        this.prisma.guest.update({
           where: { id: guest.id },
           data: {
             attending: guest.attending,
-            meal: mealMap[guest.meal] ?? 'RISOTTO',
             allergies: guest.allergies
           }
         }),

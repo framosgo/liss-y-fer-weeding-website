@@ -1,18 +1,18 @@
-# Clara & Mateo Wedding Website
+# Sitio web de la boda de Liss y Fer
 
-Production-ready wedding SPA and REST API monorepo.
+Monorepo production-ready para una SPA de boda y una API REST.
 
 ## Stack
 
-- Web: React, TypeScript, Vite, Tailwind CSS, shadcn-style UI primitives, Framer Motion, React Router, TanStack Query, React Hook Form, Zod, PWA metadata.
-- API: NestJS, TypeScript, Prisma, PostgreSQL, JWT admin auth, Swagger/OpenAPI at `/docs`.
-- Ops: Docker, Docker Compose, strict TypeScript, ESLint, Prettier, Prisma migrations and seed data.
+- Web: React, TypeScript, Vite, Tailwind CSS, primitivas UI estilo shadcn, Framer Motion, React Router, TanStack Query, React Hook Form, Zod y PWA.
+- API: NestJS, TypeScript, Prisma, PostgreSQL, autenticación admin con JWT y Swagger/OpenAPI en `/docs`.
+- Operaciones: Docker, Docker Compose, TypeScript estricto, ESLint, Prettier, migraciones Prisma y datos seed.
 
-## Quick Start
+## Inicio rápido
 
 ```bash
 npm install
-cp .env.example .env
+cp apps/api/.env.example apps/api/.env
 docker compose up postgres -d
 npm run prisma:generate
 npm run prisma:migrate
@@ -21,15 +21,15 @@ npm run dev:api
 npm run dev
 ```
 
-The SPA runs on `http://localhost:5173`, the API runs on `http://localhost:4000`, and Swagger is available at `http://localhost:4000/docs`.
+La SPA corre en `http://localhost:5173`, la API en `http://localhost:4000` y Swagger está disponible en `http://localhost:4000/docs`.
 
-Sample RSVP codes:
+Códigos RSVP de ejemplo:
 
-- `OLIVE-2027`
-- `ROSE-2027`
-- `BURGUNDY-2027`
+- `GUMIRA-2026`
+- `BARCELONA-2026`
+- `OLIVA-2026`
 
-Sample admin credentials are in `.env.example`.
+Las credenciales admin de ejemplo están en `apps/api/.env.example`.
 
 ## Docker
 
@@ -37,4 +37,4 @@ Sample admin credentials are in `.env.example`.
 docker compose up --build
 ```
 
-The composed web app is served at `http://localhost:3000`.
+La app web con Docker Compose se sirve en `http://localhost:3000`.

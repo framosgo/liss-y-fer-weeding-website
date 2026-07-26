@@ -4,16 +4,16 @@
 
 :root {
   color-scheme: light;
-  --background: 16 100% 98%;
-  --foreground: 350 69% 16%;
-  --border: 348 23% 86%;
+  --background: 52 38% 97%;
+  --foreground: 60 21% 25%;
+  --border: 60 18% 80%;
 }
 
 .dark {
   color-scheme: dark;
-  --background: 350 69% 8%;
-  --foreground: 16 100% 97%;
-  --border: 350 31% 28%;
+  --background: 60 18% 12%;
+  --foreground: 52 38% 96%;
+  --border: 60 16% 28%;
 }
 
 html {
@@ -28,9 +28,14 @@ body {
   font-family: Inter, ui-sans-serif, system-ui;
 }
 
+input[type='checkbox'],
+input[type='radio'] {
+  accent-color: #800020; /* burdeos */
+}
+
 ::selection {
-  background: #c6908f;
-  color: #470d13;
+  background: #828256;
+  color: #fff8f6;
 }
 
 .section-shell {

@@ -6,13 +6,13 @@ async function main() {
   await prisma.announcement.createMany({
     data: [
       {
-        title: 'Room block reminder',
-        body: 'Hotel blocks are held until March 1, 2027. Mention Clara and Mateo when booking.',
+        title: 'Recordatorio de alojamiento',
+        body: 'Os recomendamos reservar alojamiento en Barcelona ciudad para facilitar los traslados.',
         priority: 'HIGH'
       },
       {
-        title: 'Welcome drinks',
-        body: 'Join us Friday at 20:30 at Bar Alfalfa for informal tapas and hugs.',
+        title: 'Bienvenida',
+        body: 'Nos vemos el viernes a las 20:30 para un encuentro informal antes de la boda.',
         priority: 'NORMAL'
       }
     ],
@@ -21,22 +21,22 @@ async function main() {
 
   const parties = [
     {
-      invitationCode: 'OLIVE-2027',
-      primaryName: 'Sofia Alvarez',
+      invitationCode: 'GUMIRA-2026',
+      primaryName: 'Sofía Álvarez',
       email: 'sofia@example.com',
-      attendees: ['Sofia Alvarez', 'Diego Marin']
+      guests: ['Sofía Álvarez', 'Diego Marín']
     },
     {
-      invitationCode: 'ROSE-2027',
-      primaryName: 'The Bennett Family',
-      email: 'bennetts@example.com',
-      attendees: ['Amelia Bennett', 'Noah Bennett', 'Luca Bennett']
+      invitationCode: 'BARCELONA-2026',
+      primaryName: 'Familia Romero',
+      email: 'romero@example.com',
+      guests: ['Amelia Romero', 'Noah Romero', 'Luca Romero']
     },
     {
-      invitationCode: 'BURGUNDY-2027',
+      invitationCode: 'OLIVA-2026',
       primaryName: 'Isabel Romero',
       email: 'isabel@example.com',
-      attendees: ['Isabel Romero']
+      guests: ['Isabel Romero']
     }
   ];
 
@@ -48,9 +48,9 @@ async function main() {
         invitationCode: party.invitationCode,
         primaryName: party.primaryName,
         email: party.email,
-        partySize: party.attendees.length,
-        attendees: {
-          create: party.attendees.map((name) => ({ name }))
+        partySize: party.guests.length,
+        guests: {
+          create: party.guests.map((name) => ({ name }))
         }
       }
     });
@@ -58,8 +58,8 @@ async function main() {
 
   await prisma.guestbookEntry.createMany({
     data: [
-      { name: 'Lucia', message: 'Counting down to the most beautiful Sevillian night.' },
-      { name: 'Andre', message: 'My dance shoes are already packed.' }
+      { name: 'Lucía', message: 'Contando los días para una noche preciosa en Barcelona.' },
+      { name: 'Andrés', message: 'Mis zapatos de baile ya están preparados.' }
     ],
     skipDuplicates: true
   });

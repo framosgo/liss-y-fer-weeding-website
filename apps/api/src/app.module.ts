@@ -3,7 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
 import { PrismaModule } from './modules/prisma/prisma.module';
 import { HealthModule } from './modules/health/health.module';
-import { GuestsModule } from './modules/guests/guests.module';
+import { InvitationModule } from './modules/invitation/invitation.module';
 import { RsvpModule } from './modules/rsvp/rsvp.module';
 import { AnnouncementsModule } from './modules/announcements/announcements.module';
 import { GuestbookModule } from './modules/guestbook/guestbook.module';
@@ -16,7 +16,7 @@ import { AdminModule } from './modules/admin/admin.module';
     JwtModule.register({ global: true }),
     PrismaModule,
     HealthModule,
-    GuestsModule,
+    InvitationModule,
     RsvpModule,
     AnnouncementsModule,
     GuestbookModule,

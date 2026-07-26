@@ -10,10 +10,10 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg'],
       manifest: {
-        name: 'Clara & Mateo Wedding',
-        short_name: 'Clara & Mateo',
-        description: 'A premium wedding experience with RSVP, travel, and celebration details.',
-        theme_color: '#470d13',
+        name: 'Boda de Liss y Fer',
+        short_name: 'Liss y Fer',
+        description: 'Una experiencia premium para la boda, con RSVP, viaje y detalles de la celebración.',
+        theme_color: '#828256',
         background_color: '#fff8f6',
         display: 'standalone',
         icons: [{ src: '/favicon.svg', sizes: '64x64', type: 'image/svg+xml' }]

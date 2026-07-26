@@ -1,5 +1,4 @@
 CREATE TYPE "RSVPStatus" AS ENUM ('PENDING', 'CONFIRMED', 'DECLINED');
-CREATE TYPE "MealChoice" AS ENUM ('SEA_BASS', 'CHICKEN', 'RISOTTO', 'CHILD');
 CREATE TYPE "AnnouncementPriority" AS ENUM ('LOW', 'NORMAL', 'HIGH');
 
 CREATE TABLE "GuestParty" (
@@ -11,19 +10,19 @@ CREATE TABLE "GuestParty" (
   "status" "RSVPStatus" NOT NULL DEFAULT 'PENDING',
   "note" TEXT,
   "songRequest" TEXT,
+  "requiresBus" BOOLEAN NOT NULL DEFAULT false,
   "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
   "updatedAt" TIMESTAMP(3) NOT NULL,
   CONSTRAINT "GuestParty_pkey" PRIMARY KEY ("id")
 );
 
-CREATE TABLE "Attendee" (
+CREATE TABLE "Guest" (
   "id" TEXT NOT NULL,
   "partyId" TEXT NOT NULL,
   "name" TEXT NOT NULL,
   "attending" BOOLEAN,
-  "meal" "MealChoice",
   "allergies" TEXT,
-  CONSTRAINT "Attendee_pkey" PRIMARY KEY ("id")
+  CONSTRAINT "Guest_pkey" PRIMARY KEY ("id")
 );
 
 CREATE TABLE "Announcement" (
@@ -47,4 +46,4 @@ CREATE TABLE "GuestbookEntry" (
 );
 
 CREATE UNIQUE INDEX "GuestParty_invitationCode_key" ON "GuestParty"("invitationCode");
-ALTER TABLE "Attendee" ADD CONSTRAINT "Attendee_partyId_fkey" FOREIGN KEY ("partyId") REFERENCES "GuestParty"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "Guest" ADD CONSTRAINT "Guest_partyId_fkey" FOREIGN KEY ("partyId") REFERENCES "GuestParty"("id") ON DELETE CASCADE ON UPDATE CASCADE;

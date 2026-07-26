@@ -6,13 +6,13 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function createCalendarHref() {
-  const dates = '20270621T170000Z/20270622T020000Z';
+  const dates = '20261016T150000Z/20261017T010000Z';
   const params = new URLSearchParams({
     action: 'TEMPLATE',
-    text: 'Clara & Mateo Wedding',
+    text: 'Boda de Liss y Fer',
     dates,
-    details: 'Ceremony, dinner, dancing, and late-night buses. RSVP with your invitation code.',
-    location: 'Hacienda La Soledad, Seville, Spain'
+    details: 'Ceremonia, cena, baile y autobuses de regreso. Confirmad asistencia con vuestro código de invitación.',
+    location: 'Casa Gumira, Barcelona'
   });
   return `https://calendar.google.com/calendar/render?${params.toString()}`;
 }
