@@ -17,8 +17,12 @@ export function FaqGuestbook() {
       'Si el tiempo acompaña, sí. También contamos con un plan cubierto.',
     ],
     [
-      '¿Hay hoteles cerca?',
-      'Hay hoteles y pequeñas macías cerca de Casa Gumira. Escríbenos si necesitas ayuda.',
+      '¿Hay opciones de alojamiento cerca?',
+      'Sí, échale un vistazo a las opciones de alojamiento recomendadas en la página de Lugar.',
+    ],
+    [
+      '¿Hay transporte público cerca?',
+      'No, solo se puede llegar en coche. Si no tienes cómo llegar, indícalo al confirmar tu asistencia seleccionando la opción de autobús. Según el número de personas interesadas, decidiremos si finalmente contratamos el servicio. Y, si se organiza, las plazas serán limitadas.',
     ],
     [
       '¿Hasta cuándo puedo confirmar?',

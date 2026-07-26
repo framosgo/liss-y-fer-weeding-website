@@ -36,7 +36,7 @@ export function Hero() {
               <div className="font-serif text-3xl font-semibold tabular-nums text-[#800020]/80 sm:text-4xl dark:text-white">
                 {formatCount(value)}
               </div>
-              <div className="mt-1 text-[0.65rem] uppercase tracking-[0.25em] text-mustard dark:text-white/50">
+              <div className="mt-1 text-[0.65rem] uppercase tracking-[0.25em] text-rose dark:text-white/50">
                 {label}
               </div>
             </div>

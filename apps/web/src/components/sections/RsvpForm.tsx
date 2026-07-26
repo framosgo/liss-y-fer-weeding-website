@@ -263,9 +263,8 @@ export function RsvpForm({ invitation, onSubmitted }: RsvpFormProps) {
                 </fieldset>
                 {form.watch('requiresBus') ? (
                   <p className="text-sm leading-6 text-olive/70 dark:text-white/65">
-                    Aún estamos considerando contratar un bus para movilizaros desde Plaza Catalunya
-                    a Casa Gumira ida y vuelta, pero por ahora puedes decirnos si necesitas que te
-                    llevemos.
+                    Aún estamos considerando contratar un bus para movilizaros desde Barcelona a
+                    Casa Gumira ida y vuelta. Habrán plazas limitadas.
                   </p>
                 ) : null}
               </div>

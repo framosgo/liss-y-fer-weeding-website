@@ -1,4 +1,4 @@
-import { MapPin, Clock5, Bus, Bed } from 'lucide-react';
+import { MapPin, Clock5, Bed } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { SectionTitle } from '@/components/ui/section-title';
 
@@ -38,14 +38,6 @@ export function VenueSection() {
             por lo que os recomendamos planificar el desplazamiento con antelación.
           </p>
           <div className="grid gap-3 sm:grid-cols-2">
-            <Card className="flex gap-3 items-center bg-white/70">
-              <Bus className="h-5 w-5 shrink-0 text-terracotta" />
-              <span className="text-sm">
-                ¿Necesitas ayuda para llegar? Escríbenos porque estamos considerando ofrecer un bus
-                para el desplazamiento.
-              </span>
-            </Card>
-
             <Card className="flex gap-3 items-center bg-white/70">
               <Clock5 className="h-5 w-5 shrink-0 text-terracotta" />
               <span className="text-sm">El evento empieza a las 15:00h en punto.</span>
