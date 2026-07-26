@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
+import { ScrollToTop } from '@/components/ScrollToTop';
 import { HomePage } from '@/pages/HomePage';
 import { StoryPage } from '@/pages/StoryPage';
 import { ProgramPage } from '@/pages/ProgramPage';
@@ -13,7 +14,9 @@ import { AdminPage } from '@/pages/AdminPage';
 
 export default function App() {
   return (
-    <Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/historia" element={<StoryPage />} />
@@ -27,5 +30,6 @@ export default function App() {
       </Route>
       <Route path="/admin" element={<AdminPage />} />
     </Routes>
+    </>
   );
 }
