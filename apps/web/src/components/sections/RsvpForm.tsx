@@ -227,8 +227,8 @@ export function RsvpForm({ invitation, onSubmitted }: RsvpFormProps) {
                   <span className="flex items-center gap-2 whitespace-nowrap text-sm font-semibold">
                     <Bus className="h-4 w-4 shrink-0 text-terracotta" />
                     {isOnlyOneGuestAttending
-                      ? '¿Necesitas que te llevemos?'
-                      : '¿Necesitáis que os llevemos?'}
+                      ? '¿Necesitas transporte para llegar?'
+                      : '¿Necesitáis transporte para llegar?'}
                   </span>
                   <div className="flex items-center gap-4">
                     <label className="flex items-center gap-2 text-sm font-semibold">
@@ -263,8 +263,9 @@ export function RsvpForm({ invitation, onSubmitted }: RsvpFormProps) {
                 </fieldset>
                 {form.watch('requiresBus') ? (
                   <p className="text-sm leading-6 text-olive/70 dark:text-white/65">
-                    Aún estamos considerando contratar un bus para movilizaros desde Barcelona a
-                    Casa Gumira ida y vuelta. Habrán plazas limitadas.
+                    Estamos estudiando la posibilidad de contratar un autobús de ida y vuelta desde
+                    Barcelona. Si lo necesitas, indícalo aquí. El servicio dependerá del número de
+                    personas interesadas y, si finalmente se organiza, las plazas serán limitadas.
                   </p>
                 ) : null}
               </div>
