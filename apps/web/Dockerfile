@@ -16,7 +16,9 @@ COPY apps/web ./apps/web
 RUN npm run build --workspace @wedding/web
 
 FROM nginx:1.27-alpine AS runner
-COPY apps/web/nginx.conf /etc/nginx/conf.d/default.conf
+ENV PORT=80
+COPY apps/web/nginx.conf /etc/nginx/templates/default.conf.template
 COPY --from=build /app/apps/web/dist /usr/share/nginx/html
 EXPOSE 80
-CMD ["sh", "-c", "sed -i \"s/listen 80;/listen ${PORT:-80};/\" /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
+# Official nginx image runs envsubst on /etc/nginx/templates/*.template
+CMD ["nginx", "-g", "daemon off;"]
