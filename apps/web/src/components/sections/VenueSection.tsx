@@ -32,13 +32,11 @@ export function VenueSection() {
           </div>
         </div>
         <div>
-          <SectionTitle
-            eyebrow="Importante"
-            title=""
-            text="
-            Casa Gumira está a aproximadamente 1 hora y 30 minutos del centro de Barcelona en coche, por lo
-            que os recomendamos planificar el desplazamiento con antelación."
-          />
+          <p className="font-bold uppercase tracking-[0.28em] text-terracotta">IMPORTANTE</p>
+          <p className="mt-2 mb-8 text-base leading-6 text-olive/78">
+            Casa Gumira está a aproximadamente 1 hora y 30 minutos del centro de Barcelona en coche,
+            por lo que os recomendamos planificar el desplazamiento con antelación.
+          </p>
           <div className="grid gap-3 sm:grid-cols-2">
             <Card className="flex gap-3 items-center bg-white/70">
               <Bus className="h-5 w-5 shrink-0 text-terracotta" />
