@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { Nav } from '@/components/sections/Nav';
+import { Footer } from '@/components/sections/Footer';
 
 export function Layout() {
   return (
@@ -10,9 +11,7 @@ export function Layout() {
           <Outlet />
         </main>
       </div>
-      <footer className="bg-[#767258] py-10 text-center text-sm text-white/75">
-        Liss y Fer | Casa Gumira | 16 octubre 2026
-      </footer>
+      <Footer />
     </div>
   );
 }
