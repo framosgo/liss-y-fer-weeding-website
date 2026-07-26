@@ -1,53 +1,55 @@
 import { SectionTitle } from '@/components/ui/section-title';
 
 const dressCodeColors = [
-  '#654321', // Marrón chocolate
-  '#800020', // Burdeos
-  '#bc5830', // Terracota
-  '#c69138', // Mostaza
-  '#c19a6b', // Camel
-  '#c6908f', // Rosa empolvado
+  { name: 'Marrón chocolate', color: '#654321' },
+  { name: 'Burdeos', color: '#800020' },
+  { name: 'Terracota', color: '#bc5830' },
+  { name: 'Mostaza', color: '#c69138' },
+  { name: 'Camel', color: '#c19a6b' },
+  { name: 'Rosa empolvado', color: '#c6908f' },
 ];
 
 const forbiddenDressCodeColors = [
-  '#ffffff', // Blanco
-  '#000000', // Negro
-  '#3d4a21', // Verde oliva
-  '#002b55', // Azul marino oscuro
+  { name: 'Blanco', color: '#ffffff' },
+  { name: 'Verde oliva', color: '#556B2F' },
+  { name: 'Gris', color: '#6B6B6B' },
 ];
 
 export function WeddingDetails() {
   return (
-    <section className="bg-linen min-h-[calc(100dvh-4rem)] py-10">
+    <section className="bg-linen min-h-[calc(100dvh-10rem)] py-10">
       <div className="section-shell">
         <SectionTitle
           eyebrow="Dress code"
           title="Inspirado en la naturaleza y el otoño."
-          text="Es muy importante para nosotros y nos haría muchísima ilusión que nos acompañarais con trajes ligeros, vestidos largos y un estilo inspirado en los colores del otoño como marron chocolate, burdeos, terracota, mostaza, camel y rosa empolvado."
+          text="Es muy importante para nosotros y nos haría muchísima ilusión que nos acompañarais con trajes ligeros, vestidos largos y un estilo inspirado en los colores del otoño."
         />
-        <div className="mb-8 flex flex-wrap gap-3">
-          {dressCodeColors.map((color) => (
-            <span
-              key={color}
-              className="h-12 w-12 rounded-full border border-white shadow-sm"
-              style={{ backgroundColor: color }}
-            />
+        <div className="mb-8 flex flex-wrap justify-center gap-5 sm:justify-start">
+          {dressCodeColors.map(({ name, color }) => (
+            <div key={name} className="flex w-24 flex-col items-center gap-2">
+              <span
+                className="h-12 w-12 rounded-full border border-white shadow-sm"
+                style={{ backgroundColor: color }}
+              />
+              <span className="text-center text-sm leading-tight text-olive">{name}</span>
+            </div>
           ))}
         </div>
 
         <p className="mt-12 font-bold uppercase tracking-[0.28em] text-terracotta">IMPORTANTE</p>
         <p className="mt-2 text-base leading-6 text-olive/78">
-          Os pedimos que evitéis los colores y tonos similares al blanco, negro, verde oliva y azul
-          marino.
+          Os pedimos que evitéis los colores y tonos similares a los siguientes:
         </p>
 
-        <div className="mt-8 flex flex-wrap gap-3">
-          {forbiddenDressCodeColors.map((color) => (
-            <span
-              key={color}
-              className="h-12 w-12 rounded-full border border-white shadow-sm"
-              style={{ backgroundColor: color }}
-            />
+        <div className="mt-8 flex flex-wrap justify-center gap-5 sm:justify-start">
+          {forbiddenDressCodeColors.map(({ name, color }) => (
+            <div key={name} className="flex w-24 flex-col items-center gap-2">
+              <span
+                className="h-12 w-12 rounded-full border border-olive/20 shadow-sm"
+                style={{ backgroundColor: color }}
+              />
+              <span className="text-center text-sm leading-tight text-olive">{name}</span>
+            </div>
           ))}
         </div>
       </div>

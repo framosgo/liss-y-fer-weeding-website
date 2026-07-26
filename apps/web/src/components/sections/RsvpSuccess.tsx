@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Heart } from 'lucide-react';
+import { Heart, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Guest } from '@/lib/api';
@@ -11,10 +11,10 @@ export function RsvpSuccess({ guests }: RsvpSuccessProps) {
   const isOnlyOneGuest = guests.length === 1;
   const guestsAttending = guests.filter((guest) => guest.attending);
   return (
-    <section id="rsvp" className="bg-linen py-10">
+    <section id="rsvp" className="bg-linen py-10 min-h-[calc(100vh-10rem)]">
       <div className="section-shell">
         <Card className="mx-auto max-w-2xl p-8 text-center">
-          <Heart className="mx-auto mb-4 h-10 w-10 text-[#800020]/90 " />
+          <Heart className="mx-auto mb-4 h-10 w-10 text-terracotta" />
           <h3 className="font-serif text-3xl font-semibold text-olive">¡Gracias por confirmar!</h3>
           {guestsAttending.length > 0 ? (
             <>
@@ -25,8 +25,11 @@ export function RsvpSuccess({ guests }: RsvpSuccessProps) {
                   : 'con vosotros'}
                 .
               </p>
-              <Button asChild className="mt-6 bg-[#800020]/90 dark:bg-terracotta dark:white">
-                <Link to="/dress-code">Ver el dress code</Link>
+              <Button asChild className="mt-6">
+                <Link to="/dress-code">
+                  <Star className="h-4 w-4" />
+                  Ver el dress code
+                </Link>
               </Button>
             </>
           ) : (

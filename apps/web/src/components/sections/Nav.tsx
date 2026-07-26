@@ -51,8 +51,8 @@ export function Nav() {
               to={to}
               className={({ isActive }) =>
                 cn(
-                  'rounded-full px-4 py-2 text-sm font-semibold hover:bg-olive/10',
-                  isActive && 'bg-olive/10 text-olive dark:text-white',
+                  'rounded-full px-4 py-2 text-sm font-semibold text-rose hover:bg-rose/15 dark:text-white/80',
+                  isActive && 'bg-[#800020]/10 text-[#800020] dark:text-white',
                 )
               }
             >
@@ -69,7 +69,7 @@ export function Nav() {
             aria-expanded={open}
             onClick={() => setOpen((prev) => !prev)}
           >
-            <Menu className="h-5 w-5 text-[#800020]/90" />
+            <Menu className="h-5 w-5 text-terracotta" />
           </Button>
         </div>
       </nav>
@@ -87,8 +87,8 @@ export function Nav() {
                 to={to}
                 className={({ isActive }) =>
                   cn(
-                    'rounded-md px-3 py-2 text-sm font-semibold hover:bg-olive/10',
-                    isActive && 'bg-olive/10 text-olive dark:text-white',
+                    'rounded-md px-3 py-2 text-sm font-semibold text-rose hover:bg-rose/15 dark:text-white/80',
+                    isActive && 'bg-[#800020]/10 text-[#800020] dark:text-white',
                   )
                 }
                 onClick={() => setOpen(false)}

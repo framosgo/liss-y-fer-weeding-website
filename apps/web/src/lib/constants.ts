@@ -13,5 +13,5 @@ export const itinerary: [string, string, string][] = [
   ['17:00', 'Aperitivo', 'Burbujas, buen picoteo y fotos con los novios.'],
   ['19:00', 'Banquete', 'Menú mediterráneo de temporada. Y comed sin prisas porque todo está buenísimo.'],
   ['21:30', 'Bailamos', 'Luces, música y acción. La pista está preparada para darlo todo, y tú, también.'],
-  ['00:00', 'Fin', 'Como Cenicienta, pero en bus de vuelta a Barcelona.'],
+  ['00:00', 'Fin', 'Gracias por pasar este día tan especial con nosotros. ¡Nos vemos pronto!'],
 ];

@@ -38,7 +38,7 @@ export function FaqGuestbook() {
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between font-semibold">
                   {question}
-                  <ChevronDown className="h-4 w-4" />
+                  <ChevronDown className="h-4 w-4 text-terracotta" />
                 </summary>
                 <p className="mt-3 text-sm leading-6 text-olive/75 dark:text-white/70">{answer}</p>
               </details>
@@ -53,7 +53,7 @@ export function FaqGuestbook() {
               className="flex gap-3 p-4 px-5"
               onClick={() => window.open('https://wa.me/34628819392', '_self')}
             >
-              <Phone className="h-5 w-5 text-olive" />
+              <Phone className="h-5 w-5 text-terracotta" />
               <span className="text-sm">
                 <strong>Fer:</strong> +34 628 81 93 92
               </span>
@@ -62,7 +62,7 @@ export function FaqGuestbook() {
               className="flex gap-3 p-4 px-5"
               onClick={() => window.open('https://wa.me/34675514499', '_self')}
             >
-              <Phone className="h-5 w-5 text-olive" />
+              <Phone className="h-5 w-5 text-terracotta" />
               <span className="text-sm">
                 <strong>Liss:</strong> +34 675 51 44 99
               </span>

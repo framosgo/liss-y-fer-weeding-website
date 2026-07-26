@@ -10,9 +10,9 @@ export function TravelSection() {
       <div className="section-shell">
         <SectionTitle eyebrow="Viaje" title="Llegar fácil, celebrar sin prisas." text="Os recomendamos alojaros en Barcelona ciudad para aprovechar mejor el fin de semana y los traslados." />
         <div className="grid gap-4 md:grid-cols-3">
-          <Card className="bg-white/10 text-white"><Plane className="mb-4 h-6 w-6 text-mustard" /> Podréis llegar al aeropuerto de Barcelona-El Prat o en tren a Sants.</Card>
-          <Card className="bg-white/10 text-white"><Hotel className="mb-4 h-6 w-6 text-mustard" /> {hotels.join(', ')} son opciones cómodas para el fin de semana.</Card>
-          <Card className="bg-white/10 text-white"><MapPin className="mb-4 h-6 w-6 text-mustard" /> Habrá autobuses el día de la boda para facilitar los traslados.</Card>
+          <Card className="bg-white/10 text-white"><Plane className="mb-4 h-6 w-6 text-terracotta" /> Podréis llegar al aeropuerto de Barcelona-El Prat o en tren a Sants.</Card>
+          <Card className="bg-white/10 text-white"><Hotel className="mb-4 h-6 w-6 text-terracotta" /> {hotels.join(', ')} son opciones cómodas para el fin de semana.</Card>
+          <Card className="bg-white/10 text-white"><MapPin className="mb-4 h-6 w-6 text-terracotta" /> Habrá autobuses el día de la boda para facilitar los traslados.</Card>
         </div>
         <div className="mt-8 rounded-lg border border-white/15 bg-white/8 p-5">
           <h3 className="font-serif text-3xl font-semibold">Horarios de autobús</h3>

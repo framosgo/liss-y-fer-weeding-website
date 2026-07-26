@@ -4,7 +4,7 @@ Monorepo production-ready para una SPA de boda y una API REST.
 
 ## Stack
 
-- Web: React, TypeScript, Vite, Tailwind CSS, primitivas UI estilo shadcn, Framer Motion, React Router, TanStack Query, React Hook Form, Zod y PWA.
+- Web: React, TypeScript, Vite, Tailwind CSS, primitivas UI estilo shadcn, Framer Motion, React Router, TanStack Query, React Hook Form y Zod.
 - API: NestJS, TypeScript, Prisma, PostgreSQL, autenticación admin con JWT y Swagger/OpenAPI en `/docs`.
 - Operaciones: Docker, Docker Compose, TypeScript estricto, ESLint, Prettier, migraciones Prisma y datos seed.
 

@@ -15,7 +15,7 @@ export function RsvpCodeCheck({ onFound }: RsvpCodeCheckProps) {
   const [code, setCode] = useState('GUMIRA-2026');
   const getInvitation = useMutation({ mutationFn: getInvitationByCode, onSuccess: onFound });
   return (
-    <section id="rsvp" className="bg-linen min-h-[100dvh] py-10">
+    <section id="rsvp" className="bg-linen min-h-[calc(100vh-10rem)] py-10">
       <div className="section-shell mx-auto grid w-full max-w-xl gap-5">
         <div>
           <SectionTitle
@@ -34,7 +34,7 @@ export function RsvpCodeCheck({ onFound }: RsvpCodeCheckProps) {
               <Button
                 onClick={() => getInvitation.mutate(code)}
                 disabled={getInvitation.isPending}
-                className="shrink-0 whitespace-nowrap bg-[#800020]/90 dark:bg-terracotta dark:text-white"
+                className="shrink-0 whitespace-nowrap"
               >
                 <LogIn className="h-4 w-4" />
                 Buscar invitación

@@ -19,14 +19,14 @@ export function VenueSection() {
                 window.open('https://www.google.com/maps?q=Casa%20Gumira%20Barcelona', '_self')
               }
             >
-              <MapPin className="h-5 w-5 shrink-0 text-olive" />
+              <MapPin className="h-5 w-5 shrink-0 text-terracotta" />
               <span className="text-sm">Casa Gumira, Montmajor, Barcelona</span>
             </Card>
             <Card
               className="flex gap-3 items-center bg-white/70"
               onClick={() => window.open('/alojamientos.pdf', '_self', 'noopener,noreferrer')}
             >
-              <Bed className="h-5 w-5 shrink-0 text-olive" />
+              <Bed className="h-5 w-5 shrink-0 text-terracotta" />
               <span className="text-sm">Alojamientos cercanos recomendados</span>
             </Card>
           </div>
@@ -41,17 +41,16 @@ export function VenueSection() {
           />
           <div className="grid gap-3 sm:grid-cols-2">
             <Card className="flex gap-3 items-center bg-white/70">
-              <Bus className="h-5 w-5 shrink-0 text-olive" />
+              <Bus className="h-5 w-5 shrink-0 text-terracotta" />
               <span className="text-sm">
-                ¿Necesitas que te llevemos en bus? Escríbenos porque hay plazas limitadas.
+                ¿Necesitas ayuda para llegar? Escríbenos porque estamos considerando ofrecer un bus
+                para el desplazamiento.
               </span>
             </Card>
 
             <Card className="flex gap-3 items-center bg-white/70">
-              <Clock5 className="h-5 w-5 shrink-0 text-olive" />
-              <span className="text-sm">
-                El evento empieza a las 15:00h en punto. El bus partirá a las 14:30h.
-              </span>
+              <Clock5 className="h-5 w-5 shrink-0 text-terracotta" />
+              <span className="text-sm">El evento empieza a las 15:00h en punto.</span>
             </Card>
           </div>
         </div>

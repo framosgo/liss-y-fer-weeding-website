@@ -23,7 +23,7 @@ Si además queréis tener un detalle, cualquier contribución para nuestra luna 
 
         <div className="grid gap-4">
           <Card className="flex items-start gap-3 bg-white/70">
-            <Mail size={24} className="mt-0.5 shrink-0 text-olive" aria-hidden />
+            <Mail size={24} className="mt-0.5 shrink-0 text-terracotta" aria-hidden />
             <div className="grid min-w-0 gap-2">
               <h3 className="font-serif text-2xl font-bold text-olive dark:text-white">
                 El día de la boda
@@ -36,7 +36,7 @@ Si además queréis tener un detalle, cualquier contribución para nuestra luna 
           </Card>
           <Card className="grid gap-4 bg-white/70">
             <div className="flex items-start gap-3">
-              <Banknote size={24} className="mt-0.5 shrink-0 text-olive" aria-hidden />
+              <Banknote size={24} className="mt-0.5 shrink-0 text-terracotta" aria-hidden />
               <div className="grid min-w-0 gap-2">
                 <h3 className="font-serif text-2xl font-bold text-olive dark:text-white">
                   Transferencia bancaria

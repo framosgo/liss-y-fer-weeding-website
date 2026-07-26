@@ -9,9 +9,13 @@ export default {
         border: 'hsl(var(--border))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
-        olive: '#828256',
+        olive: '#767258',
         rose: '#c6908f',
         burgundy: '#470d13',
+        burdeos: {
+          DEFAULT: '#800020',
+          hover: '#5c0017'
+        },
         terracotta: '#bc5830',
         mustard: '#c69138'
       },

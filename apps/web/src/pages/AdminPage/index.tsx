@@ -59,7 +59,7 @@ export function AdminPage() {
             <form className="grid gap-4" onSubmit={loginForm.handleSubmit((values) => login.mutate(values))}>
               <Input type="email" {...loginForm.register('email')} />
               <Input type="password" {...loginForm.register('password')} />
-              <Button type="submit"><LogIn className="h-4 w-4" /> Entrar</Button>
+              <Button type="submit"><LogIn className="h-4 w-4 text-terracotta" /> Entrar</Button>
             </form>
           </Card>
         ) : (
@@ -72,7 +72,7 @@ export function AdminPage() {
             <div className="grid gap-6">
               <Card><h2 className="font-serif text-3xl">Invitados pendientes</h2><pre className="mt-4 whitespace-pre-wrap text-sm">{JSON.stringify(stats.data?.pendingGuests, null, 2)}</pre></Card>
             </div>
-            <Button asChild variant="secondary"><a href={`${API_URL}/admin/export`}><Download className="h-4 w-4" /> Exportar RSVPs</a></Button>
+            <Button asChild variant="secondary"><a href={`${API_URL}/admin/export`}><Download className="h-4 w-4 text-terracotta" /> Exportar RSVPs</a></Button>
           </div>
         )}
       </div>

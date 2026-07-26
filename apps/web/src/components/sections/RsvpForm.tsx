@@ -88,7 +88,7 @@ export function RsvpForm({ invitation, onSubmitted }: RsvpFormProps) {
     form.watch('guests')?.filter((guest) => guest.attending).length === 1;
 
   return (
-    <section id="rsvp" className="bg-linen min-h-[100dvh] py-10">
+    <section id="rsvp" className="bg-linen min-h-[calc(100vh-10rem)] py-10">
       <div className="section-shell mx-auto grid w-full max-w-xl gap-5">
         <SectionTitle
           eyebrow={`Invitación de ${invitation.primaryName}`}
@@ -211,7 +211,7 @@ export function RsvpForm({ invitation, onSubmitted }: RsvpFormProps) {
             <>
               <label className="grid gap-2 text-sm font-semibold">
                 <span className="flex items-center gap-2 whitespace-nowrap text-sm font-semibold">
-                  <Music className="h-4 w-4 shrink-0" />
+                  <Music className="h-4 w-4 shrink-0 text-terracotta" />
                   {isOnlyOneGuest
                     ? 'La canción que te saca a bailar:'
                     : 'La canción que os saca a bailar:'}
@@ -225,7 +225,7 @@ export function RsvpForm({ invitation, onSubmitted }: RsvpFormProps) {
               <div className="grid gap-2">
                 <fieldset className="flex items-center justify-between gap-3">
                   <span className="flex items-center gap-2 whitespace-nowrap text-sm font-semibold">
-                    <Bus className="h-4 w-4 shrink-0" />
+                    <Bus className="h-4 w-4 shrink-0 text-terracotta" />
                     {isOnlyOneGuestAttending
                       ? '¿Necesitas que te llevemos?'
                       : '¿Necesitáis que os llevemos?'}
@@ -271,11 +271,7 @@ export function RsvpForm({ invitation, onSubmitted }: RsvpFormProps) {
               </div>
             </>
           ) : null}
-          <Button
-            type="submit"
-            disabled={rsvp.isPending || !isValid}
-            className="bg-[#800020]/90 dark:bg-terracotta dark:white mt-2.5"
-          >
+          <Button type="submit" disabled={rsvp.isPending || !isValid} className="mt-2.5">
             <Send className="h-4 w-4" /> Enviar RSVP
           </Button>
         </form>
