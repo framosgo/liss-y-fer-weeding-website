@@ -91,7 +91,7 @@ export function RsvpForm({ invitation, onSubmitted }: RsvpFormProps) {
     <section id="rsvp" className="bg-linen min-h-[calc(100vh-10rem)] py-10">
       <div className="section-shell mx-auto grid w-full max-w-xl gap-5">
         <SectionTitle
-          eyebrow={`Invitación de ${invitation.primaryName}`}
+          eyebrow="Invitación"
           title={isOnlyOneGuest ? 'Confírmanos tu asistencia' : 'Confirmadnos vuestras asistencias'}
         />
         <form className="grid gap-5" onSubmit={form.handleSubmit(onSubmit)}>

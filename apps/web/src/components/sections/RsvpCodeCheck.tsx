@@ -12,7 +12,7 @@ type RsvpCodeCheckProps = {
   onFound: (invitation: Invitation) => void;
 };
 export function RsvpCodeCheck({ onFound }: RsvpCodeCheckProps) {
-  const [code, setCode] = useState('GUMIRA-2026');
+  const [code, setCode] = useState('');
   const getInvitation = useMutation({ mutationFn: getInvitationByCode, onSuccess: onFound });
   return (
     <section id="rsvp" className="bg-linen min-h-[calc(100vh-10rem)] py-10">
@@ -30,6 +30,7 @@ export function RsvpCodeCheck({ onFound }: RsvpCodeCheckProps) {
                 id="code"
                 value={code}
                 onChange={(event) => setCode(event.target.value.toUpperCase())}
+                placeholder="CASA-GUMIRA"
               />
               <Button
                 onClick={() => getInvitation.mutate(code)}
