@@ -24,10 +24,6 @@ export function FaqGuestbook() {
       '¿Hay transporte público cerca?',
       'No, solo se puede llegar en coche. Si no tienes cómo llegar, indícalo al confirmar tu asistencia seleccionando la opción de autobús. Según el número de personas interesadas, decidiremos si finalmente contratamos el servicio. Y, si se organiza, las plazas serán limitadas.',
     ],
-    [
-      '¿Hasta cuándo puedo confirmar?',
-      'Por favor, confirmad antes del 30 de agosto de 2026. Pasada la fecha lo tomaremos como que no asistiréis.',
-    ],
   ];
   return (
     <section id="faq" className="bg-linen py-20">
@@ -47,6 +43,17 @@ export function FaqGuestbook() {
                 <p className="mt-3 text-sm leading-6 text-olive/75 dark:text-white/70">{answer}</p>
               </details>
             ))}
+            <details className="rounded-lg border border-olive/15 bg-white/70 p-4 dark:bg-white/8">
+              <summary className="flex cursor-pointer list-none items-center justify-between font-semibold">
+                ¿Hasta cuándo puedo confirmar?
+                <ChevronDown className="h-4 w-4 text-terracotta" />
+              </summary>
+              <p className="mt-3 text-sm leading-6 text-olive/75 dark:text-white/70">
+                Os agradeceríamos que confirmarais vuestra asistencia
+                <strong> antes del 30 de agosto de 2026</strong>. Pasada esa fecha, entenderemos que
+                no podréis acompañarnos.
+              </p>
+            </details>
           </div>
         </div>
         <div>
