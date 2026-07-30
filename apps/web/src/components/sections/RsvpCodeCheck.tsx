@@ -43,7 +43,8 @@ export function RsvpCodeCheck({ onFound }: RsvpCodeCheckProps) {
             </div>
             {getInvitation.isError ? (
               <p className="mt-3 text-sm text-terracotta">
-                No encontramos ese código. Prueba con GUMIRA-2026.
+                No encontramos ese código. Escribe el código de tu invitación que te dimos por
+                WhatsApp.
               </p>
             ) : null}
           </Card>
