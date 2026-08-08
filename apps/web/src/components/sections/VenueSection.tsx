@@ -40,7 +40,7 @@ export function VenueSection() {
           <div className="grid gap-3 sm:grid-cols-2">
             <Card className="flex gap-3 items-center bg-white/70">
               <Clock5 className="h-5 w-5 shrink-0 text-terracotta" />
-              <span className="text-sm">El evento empieza a las 15:00h en punto.</span>
+              <span className="text-sm">El evento empieza a las 15:30h en punto.</span>
             </Card>
           </div>
         </div>

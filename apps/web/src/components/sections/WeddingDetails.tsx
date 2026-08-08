@@ -1,13 +1,5 @@
+import { ColorLookGallery, dressCodeColors } from '@/components/sections/ColorLookGallery';
 import { SectionTitle } from '@/components/ui/section-title';
-
-const dressCodeColors = [
-  { name: 'Marrón chocolate', color: '#654321' },
-  { name: 'Burdeos', color: '#800020' },
-  { name: 'Terracota', color: '#bc5830' },
-  { name: 'Mostaza', color: '#c69138' },
-  { name: 'Camel', color: '#c19a6b' },
-  { name: 'Rosa empolvado', color: '#c6908f' },
-];
 
 const forbiddenDressCodeColors = [
   { name: 'Blanco', color: '#ffffff' },
@@ -21,9 +13,10 @@ export function WeddingDetails() {
       <div className="section-shell">
         <SectionTitle
           eyebrow="Dress code"
-          title="Inspirado en la naturaleza y el otoño."
-          text="Es muy importante para nosotros y nos haría muchísima ilusión que nos acompañarais con trajes ligeros, vestidos largos y un estilo inspirado en los colores del otoño."
+          title="Elegante, formal y otoñal"
+          text="Para nosotros es importante que sigáis nuestra paleta de tonos otoñales, con trajes ligeros y vestidos largos."
         />
+
         <div className="mb-8 flex flex-wrap justify-center gap-5 sm:justify-start">
           {dressCodeColors.map(({ name, color }) => (
             <div key={name} className="flex w-24 flex-col items-center gap-2">
@@ -36,9 +29,25 @@ export function WeddingDetails() {
           ))}
         </div>
 
-        <p className="mt-12 font-bold uppercase tracking-[0.28em] text-terracotta">IMPORTANTE</p>
+        <ColorLookGallery
+          title="Ejemplos para ellas"
+          subtitle="Vestido largo y elegante"
+          gender="woman"
+          imageAlt={(colorName) => `Ejemplo de vestido largo en ${colorName}`}
+          thumbAriaLabel={(colorName) => `Ver vestido en ${colorName}`}
+        />
+
+        <ColorLookGallery
+          title="Ejemplos para ellos"
+          subtitle="Traje ligero y elegante"
+          gender="man"
+          imageAlt={(colorName) => `Ejemplo de traje en ${colorName}`}
+          thumbAriaLabel={(colorName) => `Ver traje en ${colorName}`}
+        />
+
+        <p className="mt-16 font-bold uppercase tracking-[0.28em] text-terracotta">IMPORTANTE</p>
         <p className="mt-2 text-base leading-6 text-olive/78">
-          Os pedimos que evitéis los colores y tonos similares a los siguientes:
+          Os pedimos que evitéis estos colores y tonos similares:
         </p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-5 sm:justify-start">

@@ -8,7 +8,7 @@ export const story: [string, string][] = [
 ];
 
 export const itinerary: [string, string, string][] = [
-  ['15:00', 'Bienvenida', 'Llegad con tiempo, saludad e hidrataros antes de empezar.'],
+  ['15:30', 'Bienvenida', 'Llegad con tiempo, saludad e hidrataros antes de empezar.'],
   ['16:00', 'Ceremonia', 'Señoras y señores, el gran momento del día... ¡Nos casamos!'],
   ['17:00', 'Aperitivo', 'Burbujas, buen picoteo y fotos con los novios.'],
   ['19:00', 'Banquete', 'Menú mediterráneo de temporada. Y comed sin prisas porque todo está buenísimo.'],
