@@ -25,17 +25,47 @@
   <body>
     <div id="root"></div>
     <script>
-      // Drop leftover PWA service workers so deploys aren't stuck on old caches.
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistrations().then(function (regs) {
-          regs.forEach(function (reg) { reg.unregister(); });
-        });
-      }
-      if ('caches' in window) {
-        caches.keys().then(function (keys) {
-          keys.forEach(function (key) { caches.delete(key); });
-        });
-      }
+      // Clear leftover PWA workers/caches. Register kill-switch SW so browsers
+      // still holding an old worker get a replacement that wipes storage.
+      (function () {
+        if (!('serviceWorker' in navigator)) return;
+
+        var reloadKey = 'sw-cache-cleared-v1';
+        navigator.serviceWorker
+          .register('/sw.js')
+          .catch(function () {})
+          .finally(function () {
+            return navigator.serviceWorker.getRegistrations();
+          })
+          .then(function (regs) {
+            return Promise.all(
+              (regs || []).map(function (reg) {
+                return reg.unregister();
+              }),
+            );
+          })
+          .then(function () {
+            if (!('caches' in window)) return;
+            return caches.keys().then(function (keys) {
+              return Promise.all(
+                keys.map(function (key) {
+                  return caches.delete(key);
+                }),
+              );
+            });
+          })
+          .then(function () {
+            try {
+              if (!sessionStorage.getItem(reloadKey)) {
+                sessionStorage.setItem(reloadKey, '1');
+                // One reload so the first visit after deploy drops the old SW shell.
+                if (navigator.serviceWorker.controller) {
+                  window.location.reload();
+                }
+              }
+            } catch (e) {}
+          });
+      })();
     </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
