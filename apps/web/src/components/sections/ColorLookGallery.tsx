@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const DRESS_CODE_PATH = '/dress-code';
+export const DRESS_CODE_PATH = '/images/dress-code';
 
 export const dressCodeColors = [
   {
