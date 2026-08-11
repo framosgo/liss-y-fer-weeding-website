@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils';
 const links: [string, string][] = [
   ['/programa', 'Programa'],
   ['/lugar', 'Lugar'],
-  ['/dress-code', 'Dress code'],
+  ['/dress-code', 'Código de vestimenta'],
   ['/rsvp', 'RSVP'],
   ['/regalos', 'Regalos'],
   ['/faq', 'FAQ'],

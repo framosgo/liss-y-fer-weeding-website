@@ -28,7 +28,7 @@ export function RsvpSuccess({ guests }: RsvpSuccessProps) {
               <Button asChild className="mt-6">
                 <Link to="/dress-code">
                   <Star className="h-4 w-4" />
-                  Ver el dress code
+                  Ver el código de vestimenta
                 </Link>
               </Button>
             </>

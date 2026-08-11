@@ -12,7 +12,7 @@ export function WeddingDetails() {
     <section className="bg-linen min-h-[calc(100dvh-10rem)] py-10">
       <div className="section-shell">
         <SectionTitle
-          eyebrow="Dress code"
+          eyebrow="Código de vestimenta"
           title="Elegante, formal y otoñal"
           text="Para nosotros es importante que sigáis nuestra paleta de tonos otoñales, con trajes ligeros y vestidos largos."
         />
